@@ -1,0 +1,61 @@
+<form [formGroup]="roomForm" (ngSubmit)="submitForm()">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <!--<div class="eight wide field">
+                <label for="title">Title</label>
+                    <input [formControl]="roomForm.controls['roomNumber']" class="form-control" required  type="text" name="roomNumber">
+                    //<div *ngIf="roomNumber.invalid && (roomNumber.dirty || roomNumber.touched)" class="alert alert-danger">//
+                        <div *ngIf="roomSku.hasError('invalidRoomNumber')" class="alert alert-danger">Title mora da počne sa <span>123</span></div>
+                </div>
+                    -->
+                <label for="roomNumber" style="margin-bottom: 5px; ">Room number
+                    *</label> <input (ngModelChange)="osmotri($event)" formControlName="roomNumber" name="roomNumber" id="roomNumber" #newroomNumber class="form-control"
+                    placeholder="Please enter your room number *" required>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="h_name" style="margin-bottom: 5px;">Hotel name *</label>
+                <input (ngModelChange)="osmotri($event)" formControlName="h_name" name="D" id="h_name" #newh_name
+                    class="form-control" placeholder="Please enter hotel name *" required="required">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="nights" style="margin-bottom: 5px;">Nights
+                    *</label>
+                <input formControlName="nights" name="nights" id="nights" #newanights
+                    class="form-control" placeholder="Please enter number of nights *" required="required">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="availablePpl" style="margin-bottom: 5px;">Number of people
+                    *</label>
+                <input formControlName="availablePpl" name="availablePpl" id="availablePpl" #newavailablePpl
+                    class="form-control" placeholder="Please enter number of people *" required="required">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="price" style="margin-bottom: 5px;">Price per night *</label>
+                <input [formControl]="roomForm.controls['price']" formControlName="price" name="price" id="price" #newprice class="form-control"
+                    placeholder="Please enter your maximum price per night *" required="required">
+                <div *ngIf="roomSku.hasError('invalidForm')" class="alert alert-danger">The price must be a 
+                    <span>number</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 10px;">
+            <button  [disabled]="( roomSku.hasError('invalidForm') || !roomForm.controls['price'].value)" style="min-width: 100%; " class="btn btn-success btn-send pt-2 btn-block" type="submit"
+                name="submit">Add room</button>
+        </div>
+    </div>
+</form>

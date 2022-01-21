@@ -1,0 +1,32 @@
+{
+    "rooms": [
+        {
+            "roomNumber": "12B",
+            "name": "Lente",
+            "availablePpl": 4,
+            "nights": 10,
+            "price": 125
+        },
+        {
+            "roomNumber": "37D",
+            "name": "Djidjeno",
+            "availablePpl": 2,
+            "nights": 12,
+            "price": 45
+        },
+        {
+            "roomNumber": "42F",
+            "name": "Mat",
+            "availablePpl": 3,
+            "nights": 9,
+            "price": 76
+        },
+        {
+            "roomNumber": "5A",
+            "name": "Lente",
+            "availablePpl": 4,
+            "nights": 8,
+            "price": 154
+        }
+    ]
+}
